@@ -7,6 +7,11 @@
         <children xsi:type="menu:HandledMenuItem" xmi:id="_iCSLAOegEeiSLtFLLhPiCw" elementId="project-demo.handledmenuitem.delete" label="Delete" command="_rv3DkOegEeiSLtFLLhPiCw"/>
       </menus>
     </elements>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_rJSQsOgtEeimx9wggywp7Q" elementId="project-demo.partdescriptor.organizerzestview" label="Organizer Zest View" iconURI="platform:/plugin/project-demo/icons/sample.png" contributionURI="bundleclass://project-demo/view.SimpleZestGraphView">
+      <menus xsi:type="menu:PopupMenu" xmi:id="_HbQcEOgvEeimx9wggywp7Q" elementId="project-demo.popupmenu.organizerzestview" label="Organizer Zest View">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_KW-mUOgvEeimx9wggywp7Q" elementId="project-demo.handledmenuitem.add" label="Add" command="_qGUS4OegEeiSLtFLLhPiCw"/>
+      </menus>
+    </elements>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_je4r4OegEeiSLtFLLhPiCw" featurename="commands" parentElementId="org.eclipse.e4.legacy.ide.application">
     <elements xsi:type="commands:Command" xmi:id="_qGUS4OegEeiSLtFLLhPiCw" elementId="project-demo.command.add" commandName="Add"/>
