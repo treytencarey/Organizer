@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_DQXV8OegEeiSLtFLLhPiCw">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_T_bUQOegEeiSLtFLLhPiCw" featurename="descriptors" parentElementId="org.eclipse.e4.legacy.ide.application">
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_WU7zEOegEeiSLtFLLhPiCw" elementId="project-demo.partdescriptor.organizer" label="Organizer" iconURI="platform:/plugin/project-demo/icons/sample.png" contributionURI="bundleclass://project-demo/view.MyTableViewer">
+      <menus xsi:type="menu:PopupMenu" xmi:id="_dZroMOegEeiSLtFLLhPiCw" elementId="project-demo.popupmenu.organizer" label="Organizer">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_eMb60OegEeiSLtFLLhPiCw" elementId="project-demo.handledmenuitem.add" label="Add" command="_qGUS4OegEeiSLtFLLhPiCw"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_iCSLAOegEeiSLtFLLhPiCw" elementId="project-demo.handledmenuitem.delete" label="Delete" command="_rv3DkOegEeiSLtFLLhPiCw"/>
+      </menus>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_je4r4OegEeiSLtFLLhPiCw" featurename="commands" parentElementId="org.eclipse.e4.legacy.ide.application">
+    <elements xsi:type="commands:Command" xmi:id="_qGUS4OegEeiSLtFLLhPiCw" elementId="project-demo.command.add" commandName="Add"/>
+    <elements xsi:type="commands:Command" xmi:id="_rv3DkOegEeiSLtFLLhPiCw" elementId="project-demo.command.delete" commandName="Delete"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_srMqcOegEeiSLtFLLhPiCw" featurename="handlers" parentElementId="org.eclipse.e4.legacy.ide.application">
+    <elements xsi:type="commands:Handler" xmi:id="_twZX8OegEeiSLtFLLhPiCw" elementId="project-demo.handler.0" contributionURI="bundleclass://project-demo/handler.AddHandler" command="_qGUS4OegEeiSLtFLLhPiCw"/>
+    <elements xsi:type="commands:Handler" xmi:id="_7oODYOegEeiSLtFLLhPiCw" elementId="project-demo.handler.1" contributionURI="bundleclass://project-demo/handler.DeleteHandler" command="_rv3DkOegEeiSLtFLLhPiCw"/>
+  </fragments>
+</fragment:ModelFragments>
