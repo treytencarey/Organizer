@@ -1,4 +1,2 @@
 0:ClassName:0:MethodName:Starts*:1
 1:PackageName:1:VariableName:Starts*:2
-0:A:0:a:ma1:1
-0:c:0:c:c:1

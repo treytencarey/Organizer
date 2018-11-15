@@ -156,13 +156,6 @@ public class AddDialog extends TitleAreaDialog {
         	if (classOrPackageName.getText().length() != 0 && methodOrVariableName.getText().length() != 0 && startsWithName.getText().length() != 0) {
                organizer = new Organizer(classOrPackageCombo.getSelectionIndex(), classOrPackageName.getText(), methodOrVariableCombo.getSelectionIndex(), methodOrVariableName.getText(), startsWithName.getText(), Integer.parseInt(orderCombo.getItem(orderCombo.getSelectionIndex())));
                
-               try {
-				new ProjectAnalyzer().analyze();
-			} catch (CoreException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-               
                close();
             } else {
                setErrorMessage("Please enter all data");

@@ -21,8 +21,6 @@ public class UpdateGraphViewHandler {
       System.out.println("[DBG] UpdateGraphViewHandler");
       MPart findPart = service.findPart(SimpleZestGraphView.SIMPLEZESTVIEW);
       if (findPart != null && findPart.getObject() instanceof SimpleZestGraphView) {
-         ProjectAnalyzer analyzer = new ProjectAnalyzer();
-         analyzer.analyze();
          ((SimpleZestGraphView) findPart.getObject()).update();
       }
    }

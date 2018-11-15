@@ -9,6 +9,7 @@ import java.util.Map.Entry;
 
 import javax.annotation.PostConstruct;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.services.EMenuService;
@@ -22,6 +23,7 @@ import org.eclipse.zest.layouts.LayoutStyles;
 import org.eclipse.zest.layouts.algorithms.RadialLayoutAlgorithm;
 import org.eclipse.zest.layouts.algorithms.TreeLayoutAlgorithm;
 
+import analysis.ProjectAnalyzer;
 import graph.builder.GModelBuilder;
 import graph.model.GConnection;
 import graph.provider.GLabelProvider;

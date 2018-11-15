@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
@@ -26,6 +27,7 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
 
+import analysis.ProjectAnalyzer;
 import model.OrganizerModelProvider;
 import model.editing.ClassOrPackageNameEditingSupport;
 import model.editing.MatchEditingSupport;
@@ -189,5 +191,11 @@ public class MyTableViewer {
 
    public void refresh() {
       viewer.refresh();
+      try {
+			new ProjectAnalyzer().analyze();
+		} catch (CoreException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
    }
 }
