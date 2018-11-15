@@ -7,6 +7,7 @@ import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.jface.resource.JFaceResources;
@@ -25,8 +26,10 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
+import analysis.ProjectAnalyzer;
 import model.Organizer;
 import model.OrganizerModelProvider;
+import analysis.ProjectAnalyzer;;
 
 public class AddDialog extends TitleAreaDialog {
    private Text   classOrPackageName;
@@ -152,6 +155,14 @@ public class AddDialog extends TitleAreaDialog {
          public void widgetSelected(SelectionEvent e) {
         	if (classOrPackageName.getText().length() != 0 && methodOrVariableName.getText().length() != 0 && startsWithName.getText().length() != 0) {
                organizer = new Organizer(classOrPackageCombo.getSelectionIndex(), classOrPackageName.getText(), methodOrVariableCombo.getSelectionIndex(), methodOrVariableName.getText(), startsWithName.getText(), Integer.parseInt(orderCombo.getItem(orderCombo.getSelectionIndex())));
+               
+               try {
+				new ProjectAnalyzer().analyze();
+			} catch (CoreException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+               
                close();
             } else {
                setErrorMessage("Please enter all data");

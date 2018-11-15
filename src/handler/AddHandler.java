@@ -11,6 +11,7 @@ import java.nio.file.StandardOpenOption;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
@@ -18,9 +19,11 @@ import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.swt.widgets.Shell;
 
+import analysis.ProjectAnalyzer;
 import model.OrganizerModelProvider;
 import view.AddDialog;
 import view.MyTableViewer;
+import view.SimpleZestGraphView;
 
 public class AddHandler {
    @Inject
@@ -31,7 +34,7 @@ public class AddHandler {
 
    @Execute
    public void execute() {
-      OrganizerModelProvider organizerInstance = OrganizerModelProvider.INSTANCE;
+	  OrganizerModelProvider organizerInstance = OrganizerModelProvider.INSTANCE;
       AddDialog dialog = new AddDialog(shell);
       dialog.open();
       if (dialog.getOrganizer() != null) {
@@ -43,6 +46,7 @@ public class AddHandler {
             MyTableViewer v = (MyTableViewer) findPartObj;
             v.refresh();
          }
+         SimpleZestGraphView.update();
          
          try (BufferedWriter writer = new BufferedWriter(new FileWriter(MyTableViewer.filePath, true))) {
     	    writer.write(dialog.getOrganizer().toString() + "\n");

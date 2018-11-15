@@ -15,6 +15,7 @@ import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import model.Organizer;
 import model.OrganizerModelProvider;
 import view.MyTableViewer;
+import view.SimpleZestGraphView;
 
 public class DeleteHandler {
    @Inject
@@ -30,6 +31,8 @@ public class DeleteHandler {
          Object selection = selectionService.getSelection();
          remove(selection);
          v.refresh();
+         
+         SimpleZestGraphView.update();
          
          saveFile();
       }
